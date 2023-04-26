@@ -104,6 +104,9 @@ li {
   min-width: 50%;
 }
 
+a {
+  color: rgb(255, 255, 255);
+}
 
 textarea {
   resize: none;
