@@ -7,12 +7,12 @@ background-color: rgb(255, 251, 246);
 
 
 h1 {
-font-size: 5em;
+font-size: 3em;
 color: rgb(51, 51, 51);
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 1em;
   color: rgb(140, 140, 140);
 }
 
@@ -34,32 +34,54 @@ figure {
 }
 
 .image-block img {
-  object-fit: cover;
+  object-fit:fill;
   object-position: center;
   width: 100%;
   height: 200px;
   border-radius: 15px;
-  border: 0.15em;
+  border: 0.1em;
   border-style: solid;
   border-color: rgb(140, 140, 140);
+  
+}
+ 
+li {
+  min-width: 50%;
+}
+
+#collection {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 ul {
-  --columns: 1;
-
-  display: grid;
-  grid-template-columns: repeat(var(--columns), 1fr);
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+  /* display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr); */
 }
 
-@media (min-width: 400px) {
-  ul { --columns: 2; }
-}
+
+
+
 
 @media (min-width: 600px) {
-  ul { --columns: 7; }
+  li {min-width: 20%;}
 }
 
-@media (min-width: 1000px) {
-  ul { --columns: 9; }
-
-}
+h1 {
+  font-size: 5em;
+  color: rgb(51, 51, 51);
+  }
+  
+  h2 {
+    font-size: 3em;
+    color: rgb(140, 140, 140);
+  }
+  
+  h3 {
+  color: rgb(203, 203, 203);
+  font-style: italic;
+  }
