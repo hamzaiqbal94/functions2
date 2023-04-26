@@ -1,4 +1,3 @@
-// The Description is returned as Markdown, of course.
 let markdownIt = document.createElement('script')
 markdownIt.src = 'https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.3.2/markdown-it.min.js'
 document.head.appendChild(markdownIt)
@@ -224,3 +223,30 @@ fetch(`https://api.are.na/v2/channels/${channel}?per=100`, {cache: 'no-store'})
 		parseBlocks(data)
 		window.arenaCallback?.()
 	})
+
+	const container = document.getElementsByTagName('ul')[0];
+let scrollInterval;
+let direction = 1; 
+let scrollPosition = 0;
+
+function startScrolling() {
+  scrollInterval = setInterval(() => {
+    scrollPosition += direction;
+    container.scrollLeft = scrollPosition;
+    
+    if (scrollPosition >= container.scrollWidth - container.clientWidth) {
+      direction = -1;
+    } else if (scrollPosition <= 0) {
+      direction = 1;
+    }
+  }, 10);
+}
+
+function stopScrolling() {
+  clearInterval(scrollInterval);
+}
+
+container.addEventListener('mouseenter', stopScrolling);
+container.addEventListener('mouseleave', startScrolling);
+
+startScrolling();
