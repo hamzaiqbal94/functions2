@@ -159,7 +159,7 @@ ul {
 
 }
 
-.button:hover + .dropdown {
+.button:hover .dropdown {
   max-height: 200px;
 }
 
