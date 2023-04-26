@@ -24,23 +24,31 @@ background-color: rgb(255, 251, 246);
 }
 }
 
-
-
 h1 {
-font-size: 1em;
-color: rgb(255, 255, 255);
+  font-size: 3em;
+  color: rgb(255, 255, 255);
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    color: rgb(224, 224, 224);
+
+  }
+  
+  h3 {
+  font-size: 1em;
+  font-style: italic;
+  color: rgb(220, 220, 220);
+  }
+
+h4 {
+  font-size: 1em;
+  color: rgb(220, 220, 220);
+
 }
 
-h2 {
-  font-size: 0.25em;
-  color: rgb(224, 224, 224);
-  font-weight: 100;
-}
 
-h3 {
-color: rgb(146, 146, 146);
-font-style: italic;
-}
+
 
 a { color: blue; }
 em { font-style: italic; }
@@ -68,7 +76,7 @@ figure {
  
 
 
-*{padding:0;margin:0;}
+/* *{padding:0;margin:0;}
 
 body{
 	font-family:Verdana, Geneva, sans-serif;
@@ -82,16 +90,14 @@ body{
 	height:60px;
 	bottom:30px;
 	right:60px;
-	background-color:rgb(255, 208, 0);
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
 }
 
 .my-float{
-  width: 50px ;
-  height: 50px;
-}
+  margin-top:22px;
+} */
 
 
 li {
@@ -118,7 +124,7 @@ textarea {
 }
 
 #collection {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
 }
@@ -127,6 +133,7 @@ ul {
   display: flex;
   flex-wrap: nowrap;
   overflow: auto;
+  width: 100vw;
 
   /* display: grid;
   grid-template-columns: repeat(var(--columns), 1fr); */
@@ -135,33 +142,62 @@ ul {
 
 
 .grid-container {
+  width: 100vw;
   display: grid;
-  grid-template-columns: 40% 30% 30%;
+  grid-template-columns: 100%;
+  box-sizing: border-box
 }
 
 
+.dropdown{
+  display: flex;
+  flex-direction: column;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 
 
+}
 
+.button:hover + .dropdown {
+  max-height: 200px;
+}
 
+.grid-item{
+  margin-bottom: 5vh;
+  text-align: center;
+}
 
-
-@media (min-width: 600px) {
+@media (min-width: 400px) {
   li {min-width: 40%;}
   
   .image-block img{
     height: 400px;
   }
+  h1 {
+    font-size: 4em;
+    }
+    
+    h2 {
+      font-size: 2em;
+    }
+    
+    h3 {
+    font-style: italic;
+    }
+
+    .grid-container {
+      margin-bottom: 10em;
+      width: 100vw;
+      grid-template-columns: 30% 30% 30%;
+
+  
+    }
+
+    .grid-item{
+    text-align: left;
+    }
+   
+
 }
 
-h1 {
-  font-size: 5em;
-  }
-  
-  h2 {
-    font-size: 3em;
-  }
-  
-  h3 {
-  font-style: italic;
-  }
